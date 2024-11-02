@@ -1,0 +1,4 @@
+import readline
+
+input()
+input()
