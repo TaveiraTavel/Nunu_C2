@@ -1,4 +1,0 @@
-import readline
-
-input()
-input()
